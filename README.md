@@ -27,6 +27,37 @@ bootstrap.servers=localhost:9092
 
 ## Event Types
 
+Each JSON payload in the stream contains a `type` key which
+determines the rest of the payload's shape.
+
+These three fields will be present in all events:
+
+- `type`: one of `unknown`, `start-v3`, `query`, `stop`, `rotate`, `intvar`,
+`load`, `slave`, `create-file`, `append-block`, `exec-load`, `delete-file`, `new-load`,
+`user-var`, `format-description`, `xid`, `begin-load-query`, `execute-load-query`,
+`table-map`, `pre-ga-write-rows`, `pre-ga-update-rows`, `pre-ga-delete-rows`,
+`write-rows`, `update-rows`, `delete-rows`, `incident`, `heartbeat`, `ignorable`,
+`rows-query`, `ext-write-rows`, `ext-update-rows`, `ext-delete-rows`, `gtid`,
+`anonymous-gtid`, `previous-gtids`.
+- `timestamp`: the timestamp of the event
+- `server-id`: server-id from which this request originated, also used as the record key.
+
+Here are the key event-type-specific fields:
+
+<table>
+<tr><th>type</th><th>fields</th></tr>
+<tr><td>format-description</td><td>binlog-version, server-version, header-length</td></tr>
+<tr><td>gtid</td><td>gtid, flags</td></tr>
+<tr><td>query</td><td>sql, error-code, database, exec-time</td></tr>
+<tr><td>rotate</td><td>binlog-filename, binlog-position</td></tr>
+<tr><td>rows-query</td><td>binlog-filename</td></tr>
+<tr><td>table-map</td><td>database, table, column-types, column-metadata, column-nullability</td></tr>
+<tr><td>update-rows</td><td>cols-old, cols-new, rows, table-id</td></tr>
+<tr><td>write-rows</td><td>cols, rows, table-id</td></tr>
+<tr><td>delete-rows</td><td>cols, rows, table-id</td></tr>
+<tr><td>xid</td><td>xid</td></tr>
+</table>
+
 Assuming a client had the following conversation with
 a MySQL server:
 
