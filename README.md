@@ -20,10 +20,16 @@ topic=sqlstream
 bootstrap.servers=localhost:9092
 ```
 
+## Use-cases
+
+- Live cache updates from MySQL
+- Materialized views from MySQL events
+
 ## Caveats
 
 - No support for keeping track of offsets
 - No configurable key or serialization
+- MySQL only (a PostgreSQL implementation would be nice)
 
 ## License
 
