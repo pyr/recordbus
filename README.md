@@ -27,6 +27,8 @@ run `lein uberjar` to build the project.
 
 To run it, just issue `java -jar target/sqlstream-0.1.0-standalone.jar <config-file>`
 
+Pre-built JARs are available in https://github.com/pyr/sqlstream/releases/
+
 ## Use-cases
 
 - Live cache updates from MySQL
