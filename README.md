@@ -20,6 +20,13 @@ topic=sqlstream
 bootstrap.servers=localhost:9092
 ```
 
+## Building and running
+
+You'll need [leiningen](http://leiningen.org) to build the project, you can then
+run `lein uberjar` to build the project.
+
+To run it, just issue `java -jar target/sqlstream-0.1.0-standalone.jar <config-file>`
+
 ## Use-cases
 
 - Live cache updates from MySQL
@@ -57,6 +64,8 @@ Here are the key event-type-specific fields:
 <tr><td>delete-rows</td><td>cols, rows, table-id</td></tr>
 <tr><td>xid</td><td>xid</td></tr>
 </table>
+
+
 
 Assuming a client had the following conversation with
 a MySQL server:
