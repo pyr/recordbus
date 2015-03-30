@@ -1,4 +1,4 @@
-recordbus: stream MySQL replication events to Apache Kafka.
+recordbus: stream SQL replication events to Apache Kafka.
 ===========================================================
 
 Recordbus connects to a MySQL instance as a replicant and
