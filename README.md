@@ -1,14 +1,14 @@
-sqlstream: stream MySQL replication events to Apache Kafka.
+recordbus: stream MySQL replication events to Apache Kafka.
 ===========================================================
 
-Sqlstream connects to a MySQL instance as a replicant and
+Recordbus connects to a MySQL instance as a replicant and
 produces the replication events read onto an Apache Kafka
 topic. The events are produced as a JSON-serialized map, keyed
 by the server-id which produced the event.
 
 ## Configuration
 
-Sqlstream accepts a single argument, its configuration file
+Recordbus accepts a single argument, its configuration file
 which has the following format:
 
 ```
@@ -16,7 +16,7 @@ mysql.host=localhost
 mysql.port=3306
 mysql.user=replicant
 mysql.password=replicant
-topic=sqlstream
+topic=recordbus
 bootstrap.servers=localhost:9092
 ```
 
@@ -25,9 +25,9 @@ bootstrap.servers=localhost:9092
 You'll need [leiningen](http://leiningen.org) to build the project, you can then
 run `lein uberjar` to build the project.
 
-To run it, just issue `java -jar target/sqlstream-0.1.0-standalone.jar <config-file>`
+To run it, just issue `java -jar target/recordbus-0.1.0-standalone.jar <config-file>`
 
-Pre-built JARs are available in https://github.com/pyr/sqlstream/releases/
+Pre-built JARs are available in https://github.com/pyr/recordbus/releases/
 
 ## Use-cases
 

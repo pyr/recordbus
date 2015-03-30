@@ -1,4 +1,4 @@
-(ns org.spootnik.sqlstream.kafka
+(ns org.spootnik.recordbus.kafka
   "Very thin wrapper around kafka producer code"
   (:import org.apache.kafka.clients.producer.Producer
            org.apache.kafka.clients.producer.KafkaProducer

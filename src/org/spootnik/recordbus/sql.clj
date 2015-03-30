@@ -1,4 +1,4 @@
-(ns org.spootnik.sqlstream.sql
+(ns org.spootnik.recordbus.sql
   "Publish SQL replication events on a queue."
   (:import com.github.shyiko.mysql.binlog.BinaryLogClient
            com.github.shyiko.mysql.binlog.BinaryLogClient$EventListener

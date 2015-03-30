@@ -1,10 +1,10 @@
-(defproject org.spootnik/sqlstream "0.1.0"
+(defproject org.spootnik/recordbus "0.1.0"
   :description "MySQL binlog to kafka"
-  :url "https://github.com/pyr/sqlstream"
+  :url "https://github.com/pyr/recordbus"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :aot :all
-  :main org.spootnik.sqlstream
+  :main org.spootnik.recordbus
   :dependencies [[org.clojure/clojure                           "1.6.0"]
                  [org.clojure/tools.logging                     "0.3.1"]
                  [org.spootnik/logconfig                        "0.7.3"]

@@ -1,8 +1,8 @@
-(ns org.spootnik.sqlstream
+(ns org.spootnik.recordbus
   (:gen-class)
-  (:require [org.spootnik.sqlstream.sql    :as sql]
-            [org.spootnik.sqlstream.kafka  :as kafka]
-            [org.spootnik.sqlstream.config :as config]
+  (:require [org.spootnik.recordbus.sql    :as sql]
+            [org.spootnik.recordbus.kafka  :as kafka]
+            [org.spootnik.recordbus.config :as config]
             [cheshire.core                 :as json]
             [clojure.tools.logging         :as log]))
 
@@ -16,7 +16,7 @@
 
 (defn -main
   [& [path]]
-  (let [cfg    (config/read-props (or path "/etc/sqlstream.conf"))
+  (let [cfg    (config/read-props (or path "/etc/recordbus.conf"))
         client (sql/replication-client (:sql cfg) (callback cfg))]
     (log/info "connecting to mysql")
     (loop []
