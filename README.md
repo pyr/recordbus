@@ -1,6 +1,9 @@
 recordbus: stream SQL replication events to Apache Kafka.
 ===========================================================
 
+[![Build Status](https://secure.travis-ci.org/pyr/recordbus.png)](http://travis-ci.org/pyr/recordbus)
+
+
 Recordbus connects to a MySQL instance as a replicant and
 produces the replication events read onto an Apache Kafka
 topic. The events are produced as a JSON-serialized map, keyed
